@@ -18,6 +18,11 @@ docker pull gitlab/gitlab-runner:latest
 
 ### 啟動 GitLab Runner 容器  
 docker run -d --name gitlab-runner --restart always -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner:latest  
+- -d：在後台運行容器。
+- --name gitlab-runner：為容器指定名稱為 gitlab-runner。
+- --restart always：確保容器在 Docker 重啟時自動重新啟動。
+- -v /srv/gitlab-runner/config:/etc/gitlab-runner：將宿主機的 /srv/gitlab-runner/config 目錄掛載到容器的 /etc/gitlab-runner 目錄。
+- gitlab/gitlab-runner:latest：使用 gitlab/gitlab-runner 映像檔的最新版本。
 
 ### 安裝好docker之後  
 先查看有哪些容器? docker ps   
