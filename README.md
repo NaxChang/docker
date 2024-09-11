@@ -71,12 +71,13 @@ docker rm b16221946b25
 docker run -d --name gitlab-runner -v C:\GitLab-Runner:/etc/gitlab-runner gitlab/gitlab-runner:latest
 確保映像存在
 docker search gitlab-runner
+###  gitlab-runner: the service is not installed
 
 #### 安裝vim
 - 更新包索引  
-- apt-get update  
+- apt-get update  切記一定要先更新
 -  安裝vim 
-apt-get install -y vim
+apt-get install -y vim 如果直接安裝會失敗
 
 後續其它- - -
 ## 創建並啟動一個新的 Docker 容器，基於 nginx 映像檔。
