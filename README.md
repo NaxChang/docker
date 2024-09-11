@@ -5,7 +5,7 @@ https://www.docker.com/products/docker-desktop/
 https://learn.microsoft.com/zh-tw/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v  
 gitlab相關網站  
 https://docs.gitlab.com/  
-參考GitHub 肖鵬老師
+參考GitHub 肖鵬老師  
 https://github.com/xiaopeng163/docker.tips
 ### 安裝好docker之後  
 先查看有哪些容器? docker ps   
