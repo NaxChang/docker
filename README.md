@@ -1,6 +1,6 @@
 # docker->Devops
 下載地址
-https://www.docker.com/products/docker-desktop/
+. https://www.docker.com/products/docker-desktop/ .
 下載hyper-v
 https://learn.microsoft.com/zh-tw/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
 gitlab相關網站
