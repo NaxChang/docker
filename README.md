@@ -8,3 +8,4 @@ https://docs.gitlab.com/
 ### 安裝好docker之後  
 先查看有哪些容器? docker ps   
 docker exec -it b16221946b25(名稱) /bin/sh  
+---
