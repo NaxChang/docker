@@ -41,7 +41,7 @@ https://docs.gitlab.com/runner/install/windows.html
 #### 安裝vim
 - 更新包索引  
 - apt-get update  
-#### 安裝vim  
+-  安裝vim 
 apt-get install -y vim  
 
 ## 創建並啟動一個新的 Docker 容器，基於 nginx 映像檔。
