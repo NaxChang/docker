@@ -5,10 +5,14 @@ https://www.docker.com/products/docker-desktop/
 https://learn.microsoft.com/zh-tw/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v  
 gitlab相關網站  
 https://docs.gitlab.com/  
-參考GitHub 肖鵬老師  
-https://github.com/xiaopeng163/docker.tips
 
-# 命令提示字元CMD
+
+
+
+## 命令提示字元CMD
+輸入 docker version 要出現以下畫面 
+
+![這是圖片的替代文本](C:\Users\user\Desktop\OTHERS\docker_1.png)
 
 ## 查看有哪些映像檔可以安裝    
 docker images  
