@@ -35,8 +35,13 @@ sc query gitlab-runner
 gitlab-runner register  
 ### 檢查一下狀態,這也跟Git很像,git status
 gitlab-runner status
+#### windows安裝git-lab running  
+https://docs.gitlab.com/runner/install/windows.html
 
 ## 創建並啟動一個新的 Docker 容器，基於 nginx 映像檔。
-docker run -d -p 8080:80 nginx
+docker run -d -p 8080:80 nginx  
+可以參考一下網站
+- http://localhost:8080/
+
 
 - - -
