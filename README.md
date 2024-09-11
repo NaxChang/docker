@@ -7,8 +7,6 @@ gitlab相關網站
 https://docs.gitlab.com/  
 
 
-
-
 ## 命令提示字元CMD
 輸入 docker version,會出現clinet和server
 ## 查看有哪些映像檔可以安裝    
@@ -75,7 +73,7 @@ docker run -d --name gitlab-runner -v C:\GitLab-Runner:/etc/gitlab-runner gitlab
 docker search gitlab-runner
 ###  gitlab-runner: the service is not installed
 
-#### 安裝vim
+#### 安裝vim(這一段會裝很久,看電腦速度)
 - 更新包索引  
 - apt-get update  切記一定要先更新
 -  安裝vim 
