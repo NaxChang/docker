@@ -45,12 +45,32 @@ https://docs.gitlab.com/runner/install/windows.html
 - WIN32_EXIT_CODE: 1077 (0x435) 表示「服務的指定控制器未被找到」，這通常意味著服務未能啟動或存在配置問題。
 - SERVICE_EXIT_CODE: 0 (0x0) 表示服務正常退出。
 - CHECKPOINT 和 WAIT_HINT: 0x0 表示沒有檢查點和等待提示
-###
-- 這一段很重要,因為檢查的服務可能不會啟動,STATE 1 STOPPED 1 
+### 這一段很重要,因為檢查的服務可能不會啟動,所以要讓它啟動
 - sc query gitlab-runner
 在cmd輸入這一段,很重要
 .\gitlab-runner.exe run
-
+### 錯誤解決
+gitlab-runner: the service is not installed 這個時候,就要去查看 ls -l /etc/gitlab-runner/config.toml
+文件不存在是正常的,需要創建一個基本配置
+- sudo mkdir -p /etc/gitlab-runner
+- sudo touch /etc/gitlab-runner/config.toml
+#### 如果你在 Docker 容器內部工作，使用 sudo 可能會無效，因為容器內部通常以 root 權限運行。你可以通過以下命令來確定你是否在 Docker 容器內部：
+- mkdir C:\etc\gitlab-runner
+- touch /etc/gitlab-runner/config.toml
+- dir C:\path\to\your\config  我的範例是 C:\GitLab-Runner/config
+### 刪除容器
+docker rm 4e128c2ce960 e200de8edfbf 98cc31c47641 c6121bab0750 2279529e0421
+### 刪除完之後,要檢查容器
+docker ps -a
+##### 
+停止容器,
+docker stop b16221946b25
+刪除容器：
+docker rm b16221946b25
+重新運行容器：
+docker run -d --name gitlab-runner -v C:\GitLab-Runner:/etc/gitlab-runner gitlab/gitlab-runner:latest
+確保映像存在
+docker search gitlab-runner
 
 #### 安裝vim
 - 更新包索引  
@@ -61,7 +81,7 @@ apt-get install -y vim
 後續其它- - -
 ## 創建並啟動一個新的 Docker 容器，基於 nginx 映像檔。
 docker run -d -p 8080:80 nginx  
-可以參考一下網站
+可以造訪這個網站,看是否有連線到
 - http://localhost:8080/
 
 
