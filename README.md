@@ -31,9 +31,9 @@ docker run -d --name gitlab-runner --restart always -v /srv/gitlab-runner/config
 docker exec -it 名稱 /bin/bash  
 ### 先檢查一下有沒有裝runner  
 sc query gitlab-runner
-## 如果有裝,要先註冊,在註冊前要有token,這點和GitHub很像
+### 如果有裝,要先註冊,在註冊前要有token,這點和gitHub很像
 gitlab-runner register  
-## 檢查一下狀態,這也跟Git很像,Git status
+### 檢查一下狀態,這也跟Git很像,git status
 gitlab-runner status
 
 ## 創建並啟動一個新的 Docker 容器，基於 nginx 映像檔。
