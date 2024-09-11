@@ -9,5 +9,6 @@ https://docs.gitlab.com/
 https://github.com/xiaopeng163/docker.tips
 ### 安裝好docker之後  
 先查看有哪些容器? docker ps   
-docker exec -it b16221946b25(名稱) /bin/sh  
+docker exec -it 名稱 /bin/bash
+
 - - -
