@@ -36,7 +36,21 @@ gitlab-runner register
 ### 檢查一下狀態,這也跟Git很像,git status
 gitlab-runner status
 #### windows安裝git-lab running  
-https://docs.gitlab.com/runner/install/windows.html
+https://docs.gitlab.com/runner/install/windows.html  
+#### 很重要,我嘗試裝了很多次
+首先要下載到 C:\GitLab-Runner,然後cd 切換目錄,檔名改成gitlab-runner.exe,WIN EXIT_CODE為1077 表示
+- SERVICE_NAME: gitlab-runner 服務的名稱。
+- TYPE: 10 WIN32_OWN_PROCESS 表示該服務作為獨立的 Windows 進程運行。
+- STATE: 1 STOPPED 表示服務當前已停止。
+- WIN32_EXIT_CODE: 1077 (0x435) 表示「服務的指定控制器未被找到」，這通常意味著服務未能啟動或存在配置問題。
+- SERVICE_EXIT_CODE: 0 (0x0) 表示服務正常退出。
+- CHECKPOINT 和 WAIT_HINT: 0x0 表示沒有檢查點和等待提示
+###
+- 這一段很重要,因為檢查的服務可能不會啟動,STATE 1 STOPPED 1 
+- sc query gitlab-runner
+在cmd輸入這一段,很重要
+.\gitlab-runner.exe run
+
 
 #### 安裝vim
 - 更新包索引  
