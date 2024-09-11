@@ -10,10 +10,7 @@ https://docs.gitlab.com/
 
 
 ## 命令提示字元CMD
-輸入 docker version 要出現以下畫面 
-
-![這是圖片的替代文本](C:\Users\user\Desktop\OTHERS\docker_1.png)
-
+輸入 docker version,會出現clinet和server
 ## 查看有哪些映像檔可以安裝    
 docker images  
 
