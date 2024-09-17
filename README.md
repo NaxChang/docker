@@ -153,3 +153,32 @@ build-job:
     - echo "Building the project..."
     - docker build -t my-app .
 
+# 喵好吧~
+# glpat-1234abcd
+#### git config --global credential.helper cache
+#### git credential-cache exit
+
+######
+origin  git@gitlab.com:nameless8031437/gitlab-profile.git (push)
+root@52fa9ce87709:/# ssh-keygen -t rsa -b 4096 -C "naxchang@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/id_rsa
+Your public key has been saved in /root/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:XV6iwwG4bc8lr3k0YxsLPy56DAGQX1f8XmCivChhM28 naxchang@gmail.com
+The key's randomart image is:
+
+
+
+#####
+
+root@52fa9ce87709:/# cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDTVclE/OoiAyUaTZAZGh4TLh3k2DsiGi3NMZ0kQodK0lWn8hCl7jHbiCSPVx8rIk2rcM70ID5pzykeXukd6ALNdk3Gd9eys52Tg0DnlLR0ucpCDVIFxYlzr/v/K+uV9zaRd6xSkg7qTIKcIUT/WOnvuhAWfynL5Et5D2kWXb1Wvm18MF3TwA8NHMPgQlIY8ilW0slFcnVryax/ryvaWkUF+Dmw/aSGh2lOOoJHu8y9s8Fdfc1xqyLYCRF6nwmogTi29BukiHMoBKSFLls8FjwSvNCdruhEp4O3DbFMKTZCFQ0ZjB/XeFgGEsGiVC4zA7JQAZCjiUxBbqhzC1PtlvIdqm/912Gxowj9LJ0kfuiVNuJM345iajXIwiYMikTyM+NkohFt40PEOE9hrJBBNcF3eyB5g0DkTuZa3J6kvqziqBPhA7mDDsLoEIqfeetXwKoZ8Mk9nUEL7dwCnt/1v/SWh7Xi3Yfx3gika9PeBrcpWuCB+dkeKJIKhS7vKmjsjhw1kobBnHGs8KWAUhxyiBQHSpG9yWIGNB0IPYmJYv2D8j2KXDNxqkGQMj2fWlxfbIZbiTGuY+rjqVgOtEz+IPUiXTPRZ9esoZs21AzywZv2DTabQhc8Un4lLW+Kp5kfyv9tk0Kd7YK8NbwaSEPqKyfA9n0YTj9AIgLMJXHhAs/FNQ== naxchang@gmail.com
+
+######
+root@52fa9ce87709:/# nano Host gitlab.com
+root@52fa9ce87709:/# echo $SSH_AUTH_SOCK
+/tmp/ssh-XXXXXX2Y8faV/agent.259
