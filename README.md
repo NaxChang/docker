@@ -81,9 +81,49 @@ apt-get install -y vim 如果直接安裝會失敗
 
 後續其它- - -
 ## 創建並啟動一個新的 Docker 容器，基於 nginx 映像檔。
-docker run -d -p 8080:80 nginx  
-可以造訪這個網站,看是否有連線到
-- http://localhost:8080/
+docker run -d -p 8080:80 nginx   
+可以造訪這個網站,看是否有連線到 http://localhost:8080/
+測試後,有連線
 
+
+- NETWORK ID     NAME      DRIVER    SCOPE
+- 91f446861b63   bridge    bridge    local
+- e60ccfe549ba   host      host      local
+- 3a2f4ff62b4b   none      null      local
 
 - - -
+apt update
+apt install git -y 在docker裡面裝
+git clone https://gitlab.com/nameless8031437/name-pj_0916.git
+cd your-repository
+
+克隆了 GitLab 仓库之后，你可以根据你的需求进行以下操作：
+
+1. 检查和修改代码
+在容器内，进入克隆的项目目录，检查和修改代码：
+
+bash
+複製程式碼
+cd your-repository 
+cd name-pj_0916
+# 查看项目文件
+ls -la
+---
+
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script:
+    - echo "Building the project..."
+    - docker build -t my-app .
+
+test:
+  stage: test
+  script:
+    - echo "Running tests..."
+    - docker run my-app /bin/sh -c "echo 'Running tests...'"
+----
+apt install vim -y 安裝vim
