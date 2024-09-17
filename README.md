@@ -127,3 +127,29 @@ test:
     - docker run my-app /bin/sh -c "echo 'Running tests...'"
 ----
 apt install vim -y 安裝vim
+
+# 指定使用的 Docker 镜像
+image: docker:19.03
+
+# 启用 Docker-in-Docker 服务
+services:
+  - docker:dind
+
+# 设置环境变量
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: "/certs"
+
+# 定义流水线阶段
+stages:
+  - build
+
+# 定义构建作业
+build-job:
+  stage: build
+  script:
+    - echo "Checking Docker version..."
+    - docker --version
+    - echo "Building the project..."
+    - docker build -t my-app .
+
