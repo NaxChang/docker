@@ -29,10 +29,9 @@ docker run -d --name gitlab-runner --restart always -v /srv/gitlab-runner/config
 先查看有哪些容器? docker ps   
 docker exec -it 名稱 /bin/bash  
 ### 啟動容器
-docker exec -it 4082490b7a72 /bin/bash
-docker exec -it 38d361ab9a26 /bin/bash
-
-
+docker exec -it 4082490b7a72 /bin/bash 有runner
+docker exec -it 38d361ab9a26 /bin/bash 沒有runner 
+apt-get install -y gitlab-runner
 
 ### 9/22 建立三格目錄
 mkdir -p /data/gitlab/config
@@ -53,8 +52,10 @@ docker run -d -p 443:443 -p 80:80 -p 222:22 --name gitlab --restart always -v /d
 
 #### 以下這一段,到dokcer網站
 https://hub.docker.com/r/gitlab/gitlab-runner
+docker pull gitlab/gitlab-runner
 
 # 切記,先有doceker,安裝gitlab,再安裝runner
+
 
 -------------------------------------------------
 
