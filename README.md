@@ -32,10 +32,27 @@ docker exec -it 名稱 /bin/bash
 docker exec -it 4082490b7a72 /bin/bash
 
 
-### 建立目錄
+### 9/22 建立三格目錄
 mkdir -p /data/gitlab/config
 mkdir -p /data/gitlab/logs
 mkdir -p /data/gitlab/data
+
+### 9/22 最新的 GitLab 社區版映像(cmd內製作)
+docker pull gitlab/gitlab-ce:latest
+
+#### 9/22 啟動容器
+docker run --detach ^
+  --hostname gitlab.example.com ^
+  --publish 8929:8929 --publish 8080:80 --publish 443:443 ^
+  --name gitlab ^
+  --restart always ^
+  -v C:\desktop-biltpq4\user\data\gitlab\config:/etc/gitlab ^
+  -v C:\desktop-biltpq4\user\data\gitlab\logs:/var/log/gitlab ^
+  -v C:\desktop-biltpq4\user\data\gitlab\data:/var/opt/gitlab ^
+  gitlab/gitlab-ce:latest
+
+
+
 
 
 ### 先檢查一下有沒有裝runner  
