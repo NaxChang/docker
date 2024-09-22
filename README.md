@@ -30,6 +30,8 @@ docker run -d --name gitlab-runner --restart always -v /srv/gitlab-runner/config
 docker exec -it 名稱 /bin/bash  
 ### 啟動容器
 docker exec -it 4082490b7a72 /bin/bash
+docker exec -it 38d361ab9a26 /bin/bash
+
 
 
 ### 9/22 建立三格目錄
@@ -42,6 +44,14 @@ docker pull gitlab/gitlab-ce:latest
 
 #### 9/22 啟動容器
 docker run -d -p 443:443 -p 80:80 -p 222:22 --name gitlab --restart always -v /desktop-biltpq4/user/data/gitlab/config:/etc/gitlab -v /desktop-biltpq4/user/data/gitlab/logs:/var/log/gitlab -v /desktop-biltpq4/user/data/gitlab/data:/var/opt/gitlab gitlab/gitlab-ce:latest
+
+
+#### 編輯
+1. vim /etc/gitlab.rb
+2. gitlab-ctl reconfigure 重新配置
+3. docker restart gitlab
+
+-------------------------------------------------
 
 ### 先檢查一下有沒有裝runner  
 sc query gitlab-runner
