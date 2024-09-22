@@ -153,7 +153,6 @@ build-job:
     - echo "Building the project..."
     - docker build -t my-app .
 
-# 喵好吧~
 # glpat-1234abcd
 #### git config --global credential.helper cache
 #### git credential-cache exit
@@ -182,3 +181,67 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDTVclE/OoiAyUaTZAZGh4TLh3k2DsiGi3NMZ0kQodK
 root@52fa9ce87709:/# nano Host gitlab.com
 root@52fa9ce87709:/# echo $SSH_AUTH_SOCK
 /tmp/ssh-XXXXXX2Y8faV/agent.259
+
+
+在本地使用 Docker Desktop 安裝 GitLab 和 GitLab Runner，按照以下步驟進行：
+
+步驟 1: 安裝 Docker Desktop
+確保你已經安裝並啟動 Docker Desktop。
+
+步驟 2: 拉取 GitLab Docker 映像
+在命令行中運行以下命令來拉取 GitLab 的 Docker 映像：
+
+bash
+複製程式碼
+docker pull gitlab/gitlab-ee:latest
+步驟 3: 啟動 GitLab 容器
+使用以下命令來啟動 GitLab。你可以根據需要調整埠號和環境變數。
+
+bash
+複製程式碼
+docker run --detach \
+  --hostname localhost \
+  --publish 8929:8929 --publish 443:443 --publish 80:80 \
+  --name gitlab \
+  --restart always \
+  --volume gitlab-config:/etc/gitlab \
+  --volume gitlab-logs:/var/log/gitlab \
+  --volume gitlab-data:/var/opt/gitlab \
+  gitlab/gitlab-ee:latest
+步驟 4: 訪問 GitLab
+在瀏覽器中輸入 http://localhost:8929（或你配置的埠），然後按照指示設置管理員帳戶。
+
+步驟 5: 安裝 GitLab Runner
+在命令行中運行以下命令來拉取 GitLab Runner 的 Docker 映像：
+
+bash
+複製程式碼
+docker pull gitlab/gitlab-runner:latest
+步驟 6: 啟動 GitLab Runner
+運行 GitLab Runner 容器：
+
+bash
+複製程式碼
+docker run -d --name gitlab-runner --restart always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  gitlab/gitlab-runner:latest
+步驟 7: 註冊 GitLab Runner
+在容器內運行以下命令來註冊 Runner：
+
+bash
+複製程式碼
+docker exec -it gitlab-runner gitlab-runner register
+你需要輸入以下信息：
+
+GitLab URL（例如 http://localhost:8929）
+登錄令牌（在 GitLab 中找到，通常在 Settings > CI / CD > Runners）
+描述（可以任意命名）
+標籤（可選）
+Executor（通常選擇 docker）
+步驟 8: 配置 Runner
+根據需要編輯 Runner 配置文件（在 /etc/gitlab-runner/config.toml）。
+
+步驟 9: 測試 CI/CD
+在 GitLab 中創建一個項目並添加 .gitlab-ci.yml 文件，然後推送到 GitLab，檢查 CI/CD 是否正常運作。
+
+這樣，你就可以在本地使用 Docker Desktop 成功安裝 GitLab 和 GitLab Runner 了！如果有問題隨時問我！
