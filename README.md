@@ -43,11 +43,6 @@ docker pull gitlab/gitlab-ce:latest
 #### 9/22 啟動容器
 docker run -d -p 443:443 -p 80:80 -p 222:22 --name gitlab --restart always -v /desktop-biltpq4/user/data/gitlab/config:/etc/gitlab -v /desktop-biltpq4/user/data/gitlab/logs:/var/log/gitlab -v /desktop-biltpq4/user/data/gitlab/data:/var/opt/gitlab gitlab/gitlab-ce:latest
 
-
-
-
-
-
 ### 先檢查一下有沒有裝runner  
 sc query gitlab-runner
 ### 如果有裝,要先註冊,在註冊前要有token,這點和gitHub很像
@@ -82,7 +77,7 @@ docker rm 4e128c2ce960 e200de8edfbf 98cc31c47641 c6121bab0750 2279529e0421
 ### 刪除完之後,要檢查容器
 docker ps -a
 ##### 
-停止容器,
+停止容器
 docker stop b16221946b25
 刪除容器：
 docker rm b16221946b25
