@@ -46,10 +46,15 @@ docker pull gitlab/gitlab-ce:latest
 docker run -d -p 443:443 -p 80:80 -p 222:22 --name gitlab --restart always -v /desktop-biltpq4/user/data/gitlab/config:/etc/gitlab -v /desktop-biltpq4/user/data/gitlab/logs:/var/log/gitlab -v /desktop-biltpq4/user/data/gitlab/data:/var/opt/gitlab gitlab/gitlab-ce:latest
 
 
-#### 編輯
+####9/22 編輯
 1. vim /etc/gitlab.rb
 2. gitlab-ctl reconfigure 重新配置
 3. docker restart gitlab
+
+#### 以下這一段,到dokcer網站
+https://hub.docker.com/r/gitlab/gitlab-runner
+
+# 切記,先有doceker,安裝gitlab,再安裝runner
 
 -------------------------------------------------
 
