@@ -25,10 +25,19 @@ docker run -d --name gitlab-runner --restart always -v /srv/gitlab-runner/config
 -  /etc/gitlab-runner 目錄。  
 - gitlab/gitlab-runner:latest：使用 gitlab/gitlab-runner 映像檔的最新版本。  
 
-
 ### 安裝好docker之後  
 先查看有哪些容器? docker ps   
 docker exec -it 名稱 /bin/bash  
+### 啟動容器
+docker exec -it 4082490b7a72 /bin/bash
+
+
+### 建立目錄
+mkdir -p /data/gitlab/config
+mkdir -p /data/gitlab/logs
+mkdir -p /data/gitlab/data
+
+
 ### 先檢查一下有沒有裝runner  
 sc query gitlab-runner
 ### 如果有裝,要先註冊,在註冊前要有token,這點和gitHub很像
