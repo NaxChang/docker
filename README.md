@@ -41,15 +41,8 @@ mkdir -p /data/gitlab/data
 docker pull gitlab/gitlab-ce:latest
 
 #### 9/22 啟動容器
-docker run --detach ^
-  --hostname gitlab.example.com ^
-  --publish 8929:8929 --publish 8080:80 --publish 443:443 ^
-  --name gitlab ^
-  --restart always ^
-  -v C:\desktop-biltpq4\user\data\gitlab\config:/etc/gitlab ^
-  -v C:\desktop-biltpq4\user\data\gitlab\logs:/var/log/gitlab ^
-  -v C:\desktop-biltpq4\user\data\gitlab\data:/var/opt/gitlab ^
-  gitlab/gitlab-ce:latest
+docker run -d -p 443:443 -p 80:80 -p 222:22 --name gitlab --restart always -v /desktop-biltpq4/user/data/gitlab/config:/etc/gitlab -v /desktop-biltpq4/user/data/gitlab/logs:/var/log/gitlab -v /desktop-biltpq4/user/data/gitlab/data:/var/opt/gitlab gitlab/gitlab-ce:latest
+
 
 
 
